@@ -1,13 +1,18 @@
 all:Cuda_9a
 
-Cuda_9a: AuxillaryData.o GetDeviceData.o Backend_Host.o
-	nvcc AuxillaryData.o GetDeviceData.o Backend_Host.o
+PATH :=$(PATH):/usr/local/cuda/bin
+
+Cuda_9a: AuxillaryData.o GetDeviceData.o FileWriter.o Backend_Host.o
+	nvcc AuxillaryData.o GetDeviceData.o FileWriter.o Backend_Host.o
 
 AuxillaryData.o: AuxillaryData.cu
 	nvcc -c AuxillaryData.cu
 
 GetDeviceData.o: GetDeviceData.cu
 	nvcc -c GetDeviceData.cu
+
+FileWriter.o:  FileWriter.cu
+	nvcc -c FileWriter.cu
 
 Backend_Host.o: Backend_Host.cu
 	nvcc -c Backend_Host.cu
