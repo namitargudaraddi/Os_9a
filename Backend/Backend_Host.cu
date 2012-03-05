@@ -1,11 +1,18 @@
 #include "GlobalStruct.h"
 #include "GetDeviceData.h"
 #include "AuxillaryData.h"
+#include "FileWriter.h"
 
 int main()
 {
-	DeviceData gpuData = GetDeviceInformation(gpuData);
-	Extract_AuxillaryData(&(gpuData->fanspeed),&(gpuData->temperature),&(gpuData->totalMemory),&(gpuData->usedMemory),&(gpuData->freeMemory));
-	printf("\nFanspeed:: %d\nTotal memory:: %dMB\nUsed memory:: %dMB\nFree memory:: %dMB\nTemperature:: %d\n",gpuData->fanspeed,gpuData->totalMemory,gpuData->usedMemory,gpuData->freeMemory,gpuData->temperature);
-	printf("Device Name:: %s",gpuData->deviceName);
+	char *fullFilePath;
+	fullFilePath=(char *)malloc(sizeof(char)*(strlen(getenv("HOME"))+10));
+	strcpy(fullFilePath,getenv("HOME"));
+	strcat(fullFilePath,"/Data.txt\0");
+	while(1)
+	{
+	DeviceData gpuData = GetDeviceInformation();
+	Extract_AuxillaryData(&(gpuData->fanspeed),&(gpuData->temperature),&(gpuData->totalMemory),&(gpuData->usedMemory),&(gpuData->freeMemory),&(gpuData->gpuUsage),&(gpuData->memUsage));
+	WriteData(gpuData,fullFilePath);
+	}
 }

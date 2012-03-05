@@ -1,9 +1,10 @@
 #include "GetDeviceData.h"
 #include <cuda.h>
 
-DeviceData GetDeviceInformation(DeviceData gpuData)
+DeviceData GetDeviceInformation()
 {
 	// Device properties.
+	DeviceData gpuData;
 	cudaDeviceProp gpuDeviceProperties;
 	int deviceCount,i;
 	

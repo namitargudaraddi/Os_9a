@@ -17,6 +17,8 @@ struct deviceData
         int temperature;
         int threadsPerBlock;
         char *deviceName;
+	int memUsage;
+	int gpuUsage;
 };
 
 typedef struct deviceData *DeviceData;

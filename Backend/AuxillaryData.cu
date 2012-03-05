@@ -3,7 +3,7 @@
 #include <stdlib.h>
 
 // Main function.
-void Extract_AuxillaryData(int *fanspeed,int *temperature,int *totalMemory,int *usedMemory,int *freeMemory)
+void Extract_AuxillaryData(int *fanspeed,int *temperature,int *totalMemory,int *usedMemory,int *freeMemory,int *gpuUsage,int *memUsage)
 {
     // Invoking the system command for the nvidia smi and writing the output a temporary file.
     system("nvidia-smi -a>GPU_Data.txt");
@@ -81,9 +81,33 @@ void Extract_AuxillaryData(int *fanspeed,int *temperature,int *totalMemory,int *
     }
     *freeMemory=atoi(dat);
 
+    // Extracting utilization.
+    while(c!=':')
+    c=fgetc(data);
+    c=fgetc(data);
+    counter=0;
+    while(c!='\n')
+    {
+        c=fgetc(data);
+        dat[counter++]=c;
+    }
+    dat[counter]='\0';
+    *gpuUsage=atoi(dat);
+    while(c!=':')
+    c=fgetc(data);
+    c=fgetc(data);
+    counter=0;
+    while(c!='\n')
+    {
+        c=fgetc(data);
+        dat[counter++]=c;
+    }
+    dat[counter]='\0';
+    *memUsage=atoi(dat);
+
     // Extracting the temperature of the GPU.
     counter=1;
-    while(counter<35)
+    while(counter<33)
     {
      c = fgetc(data);
      if(c=='\n')

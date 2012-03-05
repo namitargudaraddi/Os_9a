@@ -1,0 +1,78 @@
+
+==============NVSMI LOG==============
+
+Timestamp                       : Fri Mar  2 16:42:39 2012
+
+Driver Version                  : 270.35
+
+Attached GPUs                   : 1
+
+GPU 0:1:0
+    Product Name                : GeForce GTX 460 SE
+    Display Mode                : N/A
+    Persistence Mode            : Disabled
+    Driver Model
+        Current                 : N/A
+        Pending                 : N/A
+    Serial Number               : N/A
+    GPU UUID                    : N/A
+    Inforom Version
+        OEM Object              : N/A
+        ECC Object              : N/A
+        Power Management Object : N/A
+    PCI
+        Bus                     : 1
+        Device                  : 0
+        Domain                  : 0
+        Device Id               : E2310DE
+        Bus Id                  : 0:1:0
+    Fan Speed                   : 40 %
+    Memory Usage
+        Total                   : 1023 Mb
+        Used                    : 32 Mb
+        Free                    : 990 Mb
+    Compute Mode                : Default
+    Utilization
+        Gpu                     : N/A
+        Memory                  : N/A
+    Ecc Mode
+        Current                 : N/A
+        Pending                 : N/A
+    ECC Errors
+        Volatile
+            Single Bit            
+                Device Memory   : N/A
+                Register File   : N/A
+                L1 Cache        : N/A
+                L2 Cache        : N/A
+                Total           : N/A
+            Double Bit            
+                Device Memory   : N/A
+                Register File   : N/A
+                L1 Cache        : N/A
+                L2 Cache        : N/A
+                Total           : N/A
+        Aggregate
+            Single Bit            
+                Device Memory   : N/A
+                Register File   : N/A
+                L1 Cache        : N/A
+                L2 Cache        : N/A
+                Total           : N/A
+            Double Bit            
+                Device Memory   : N/A
+                Register File   : N/A
+                L1 Cache        : N/A
+                L2 Cache        : N/A
+                Total           : N/A
+    Temperature
+        Gpu                     : 35 C
+    Power Readings
+        Power State             : N/A
+        Power Management        : N/A
+        Power Draw              : N/A
+        Power Limit             : N/A
+    Clocks
+        Graphics                : N/A
+        SM                      : N/A
+        Memory                  : N/A
